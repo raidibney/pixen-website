@@ -2,6 +2,7 @@ import { Button, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
 import { IoIosHeart } from "react-icons/io";
 import { IoDownload } from "react-icons/io5";
+import Link from "next/link";
 
 const PhotoCard = ({ photo }) => {
   return (
@@ -42,7 +43,10 @@ const PhotoCard = ({ photo }) => {
           <p className="text-gray-400 italic">Loading image...</p>
         </div>
       )}
-     <Button variant="outline " className="w-full mt-5 border-2">view </Button>
+    <Link href={`/all-photos/${photo.id}`}>
+  <Button variant="outline" className="w-full mt-5 border-2">view</Button>
+</Link>
+     
     </div>
   );
 };
